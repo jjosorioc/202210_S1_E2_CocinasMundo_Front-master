@@ -1,0 +1,43 @@
+<div class="container-fluid" *ngIf="notUndefined()">
+  <p class="h3 p-3"><strong>{{ culturaCulinariaDetail.nombreCultura }}</strong></p>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>{{ culturaCulinariaDetail.descripcionCultura }}</dd>
+        <hr>
+        <dt>Calificación</dt>
+        <dd>{{ culturaCulinariaDetail.calificacionCultura }}</dd>
+        <hr />
+        <dt>Región</dt>
+        <dd routerLink="/regiones/{{culturaCulinariaDetail.region.id}}">{{culturaCulinariaDetail.region.nombre}}</dd>
+      </dl>
+    </div>
+    <div class="col">
+      <img class="imagen" src="{{ culturaCulinariaDetail.imagen}}" alt="{{ culturaCulinariaDetail.nombreCultura}}" />
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <hr>
+      <dl>
+        <dt>Platos</dt>
+      </dl>
+      <ul>
+        <li *ngFor="let r of culturaCulinariaDetail?.recetasMasRepresentativas" routerLink="/platos/{{r.id}}">
+          {{r.nombrePlato}}</li>
+      </ul>
+    </div>
+    <div class="col">
+      <hr>
+      <dl>
+        <dt>Restaurantes</dt>
+      </dl>
+      <ul>
+        <li *ngFor="let r of culturaCulinariaDetail?.restaurantes" routerLink="/restaurantes/{{r.id}}">
+          {{r.nombreRestaurante}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

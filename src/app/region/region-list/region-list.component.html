@@ -1,0 +1,42 @@
+<h1>Regiones</h1>
+<hr *ngIf="selected">
+<div *ngIf="selected">
+  <app-region-detail [regionDetail]="selectedRegiones"></app-region-detail>
+</div>
+<hr>
+
+<div class="container-fluid">
+  <div class="col-lg-6 col-md-12">
+    <table class="table">
+      <caption>Regiones</caption>
+      <thead>
+        <tr>
+          <th scope="col">
+            ID
+          </th>
+          <th scope="col">
+            Nombre
+          </th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of regiones">
+          <td>
+            <dd>
+              {{r.id}}
+            </dd>
+          </td>
+          <td>
+            <dd (click)="onClick(r)">
+              {{r.nombre}}
+            </dd>
+          </td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

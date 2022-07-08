@@ -1,0 +1,45 @@
+<div *ngIf="selected">
+  <app-ubicacion-detail [ubicacionDetail]="selectedUbicaciones"></app-ubicacion-detail>
+</div>
+
+<div class="container-fluid">
+  <div class="col-lg-6 col-md-12">
+    <table class="table">
+      <caption>Ubicaciones</caption>
+      <thead>
+        <tr>
+          <th scope="col">
+            ID
+          </th>
+          <th scope="col">
+            Latitud
+          </th>
+          <th scope="col">
+            Longitud
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of ubicaciones">
+          <td>
+            <dd (click)="onClick(p)">
+              {{p.id}}
+            </dd>
+          </td>
+          <td>
+            <dd>
+              {{p.latitudUbicacion}}
+            </dd>
+          </td>
+          <td>
+            <dd>
+              {{p.longitudUbicacion}}
+            </dd>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

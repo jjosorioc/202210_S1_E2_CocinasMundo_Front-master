@@ -1,0 +1,22 @@
+<h1>Ciudades</h1>
+<hr>
+
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let c of ciudades" class="col mb-2">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <br><br> <br>
+            <h3><strong>{{c.nombre}}</strong></h3>
+            <p>Latitud: {{c.ubicacion.latitudUbicacion}}</p>
+            <p>Longitud: {{c.ubicacion.longitudUbicacion}}</p>
+          </div>
+          <div class="flip-card-back" (mouseenter)="onClick(c)">
+            <app-ciudad-detail [ciudadDetail]="selectedCiudades"></app-ciudad-detail>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

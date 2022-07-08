@@ -1,0 +1,19 @@
+<h1>Estrellas Michelin</h1>
+<hr *ngIf="selected">
+<div *ngIf="selected">
+  <app-estrellaMichelin-detail [estrellaMichelinDetail]="selectedEstrellasMichelin"></app-estrellaMichelin-detail>
+</div>
+<hr>
+
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let em of estrellasMichelin" class="col mb-2">
+      <div class="card p-2" style="width: 15rem; height: 10rem" (click)="onSelected(em)">
+        <div class="card-body">
+          <h5 class="card-title">Año entregada: {{em.fechaEntrega}}</h5>
+          <p class="card-text">Tipo Estrella: {{em.tipoEstrella}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

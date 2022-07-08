@@ -1,0 +1,36 @@
+<div *ngIf="selected">
+  <app-ingrediente-detail [ingredienteDetail] = "selectedIngrediente"></app-ingrediente-detail>
+</div>
+
+<div class="container-fluid">
+  <div class="col-lg-6 col-md-12">
+    <table class="table">
+      <caption>Ingredientes</caption>
+      <thead>
+        <h2>Ingredientes</h2>
+        <tr>
+          <th scope="col">
+            ID
+          </th>
+          <th scope="col">
+            NOMBRE
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of ingredientes">
+          <td>
+            <dd>
+              {{i.id}}
+            </dd>
+          </td>
+          <td>
+            <dd (click)="onClick(i)">
+              {{i.nombre}}
+            </dd>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

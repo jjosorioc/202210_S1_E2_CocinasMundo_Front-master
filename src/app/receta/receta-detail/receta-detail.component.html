@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ recetaDetail.nombre }}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+        <img
+          class="img-fluid"
+          src="{{ recetaDetail.imagenes }}"
+          alt="{{ recetaDetail.nombre }}"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt>Ingredientes</dt>
+        <dd class="caption" routerLink="/ingredientes/{{ i.id }}" *ngFor="let i of recetaDetail.ingredientes">
+          {{ i.nombre }}
+        </dd>
+
+        <dt>Descripción</dt>
+        <dd>{{ recetaDetail.descripcion }}</dd>
+        <hr />
+        <dt>Preparación</dt>
+        <dd>{{ recetaDetail.preparacion }}</dd>
+        <dt>Plato</dt>
+        <dd routerLink="/platos/{{recetaDetail.plato.id}}"> {{ recetaDetail.plato.nombrePlato}}</dd>
+      </dl>
+    </div>
+  </div>
+</div>

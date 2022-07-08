@@ -1,0 +1,28 @@
+<div class="container-fluid" *ngIf="notUndefined()">
+  <p class="h3 p-3">{{paisDetail.nombre}}</p>
+  <div class="col">
+    <dl>
+      <dt>Ubicación</dt>
+      <dd>Latitud: {{paisDetail.ubicacion.latitudUbicacion}}</dd>
+      <dd>Longitud: {{paisDetail.ubicacion.longitudUbicacion}}</dd>
+
+      <hr>
+
+      <dt>Ciudades</dt>
+      <ul>
+        <li *ngFor="let c of paisDetail?.ciudades" routerLink="/ciudades/{{c.id}}">{{c.nombre}}</li>
+      </ul>
+      <hr>
+      <dt>Regiones</dt>
+      <ul>
+        <li *ngFor="let r of paisDetail?.regiones" routerLink="/regiones/{{r.id}}">{{r.nombre}}</li>
+      </ul>
+      <hr>
+      <dt>Culturas Culinarias</dt>
+      <ul>
+        <li *ngFor="let cc of paisDetail?.culturasCulinarias" routerLink="/culturasculinarias/{{cc.id}}">
+          {{cc.nombreCultura}}</li>
+      </ul>
+    </dl>
+  </div>
+</div>

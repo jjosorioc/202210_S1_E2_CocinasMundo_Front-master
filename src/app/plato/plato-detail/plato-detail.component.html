@@ -1,0 +1,28 @@
+<div class="container-fluid" *ngIf="notUndefined()">
+  <p class="h3 p-3">{{platoDetail.nombrePlato}}</p>
+  <div class="col">
+    <dl>
+
+      <dt>Precio</dt>
+      <dd>{{platoDetail.precioDouble}}</dd>
+      <hr>
+      <dt>Descripción</dt>
+      <dd>{{platoDetail.descripcionPlato}}</dd>
+      <hr>
+      <dt>Cultura Culinaria</dt>
+      <dd routerLink="/culturasculinarias/{{platoDetail.culturaCulinaria.id}}">{{platoDetail.culturaCulinaria.nombreCultura}}</dd>
+      <hr>
+
+      <dt>Restaurantes</dt>
+      <ul>
+        <li *ngFor="let r of platoDetail?.restaurantes" routerLink="/restaurantes/{{r.id}}">{{r.nombreRestaurante}}</li>
+      </ul>
+      <hr>
+      <dt>Recetas</dt>
+      <ul>
+        <li *ngFor="let r of platoDetail?.recetas" routerLink="/recetas/{{r.id}}">{{r.descripcion}}</li>
+      </ul>
+    </dl>
+
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h1>¡Platos!</h1>
+<hr *ngIf="selected">
+<div *ngIf="selected">
+  <app-plato-detail [platoDetail]="selectedPlato"></app-plato-detail>
+</div>
+
+<hr>
+
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let p of platos" class="col mb-2">
+      <div class="card p-2" style="width: 15rem; height: 15rem" (click)="onSelected(p)">
+        <div class="card-body">
+          <h5 class="card-title">{{p.nombrePlato}}</h5>
+          <p class="card-text">Precio: {{p.precioDouble}} COP</p>
+          <p class="card-text">Descripción: {{p.descripcionPlato}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

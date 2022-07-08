@@ -1,0 +1,36 @@
+<div class="page-heading products-heading header-text" id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-content">
+          <h2><strong>CULTURAS CULINARIAS</strong></h2>
+          <h4>Conoce la gastronomia</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<br>
+
+<div *ngIf="selected" class="window-notice" id="window-notice">
+  <div class="content">
+      <div class="content-text"><app-culturaculinaria-detail [culturaCulinariaDetail]="selectedCulturas"></app-culturaculinaria-detail></div>
+      <div class="content-buttons"><button class="btn2" (click)="exit()">Salir</button></div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row grid">
+      <div  *ngFor="let p of culturaCulinaria"  class="col-lg-4 col-md-4 all des" >
+
+        <div class="product-item">
+          <a href="#"><img src= "{{p.imagen}}" alt=""></a>
+          <div class="down-content">
+            <button (click)="onClick(p)" class="tituloCarta"> {{p.nombreCultura}}</button>
+            <p>{{p.descripcionCultura}}</p>
+            <span><strong>{{p.calificacionCultura}} Estrellas</strong></span>
+          </div>
+        </div>
+      </div>
+

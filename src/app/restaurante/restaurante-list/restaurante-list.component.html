@@ -1,0 +1,89 @@
+<div class="page-heading products-heading header-text" id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-content">
+          <h2><strong>RESTAURANTES</strong></h2>
+          <h4>Explora cual te gustaría visitar</h4>
+        </div>
+      </div>
+    </div>
+    <!--<div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="text-content">
+          <button class="btn" (click)="todosR()"><strong>Todos los restaurantes</strong></button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="text-content">
+          <button  class="btn" (click)="estrellasR()"><strong>Estrellas Michelin</strong></button>
+        </div>
+      </div>
+      <div class="col"></div>
+  </div>-->
+  </div>
+</div>
+
+<br><br><br>
+
+<div *ngIf="selected" class="window-notice" id="window-notice">
+  <div class="content">
+      <div class="content-text"><app-restaurante-detail [restauranteDetail]="selectedRestaurante"></app-restaurante-detail></div>
+      <div class="content-buttons"><button class="btn2" (click)="exit()">Salir</button></div>
+  </div>
+</div>
+
+
+<div >
+
+  <div class="row">
+    <h3><strong>Todos los restaurantes</strong></h3>
+  </div>
+<br>
+
+<div class="container-fluid">
+  <div class="row grid">
+      <div  *ngFor="let r of restaurantes"  class="col-lg-4 col-md-4 all des" >
+        <div class="product-item">
+          <a href="#"><img src= "{{r.imagen}}" alt=""></a>
+          <div class="down-content">
+            <button (click)="onClick(r)" class="tituloCarta"> {{r.nombreRestaurante}}</button>
+            <p>{{r.direccionRestaurante}}</p>
+            <span><strong>{{r.ciudad.nombre}}</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<br>
+</div>
+
+<!--
+
+<div *ngIf="estrellas">
+
+  <div class="row">
+    <h3><strong>Restaurantes con Estrellas Michelin</strong></h3>
+  </div>
+  <br>
+
+  <div class="container-fluid">
+    <div class="row grid">
+        <div  *ngFor="let r of restaurantesEstrellas(restaurantes)"  class="col-lg-4 col-md-4 all des" >
+          <div class="product-item">
+            <a href="#"><img src= "{{r.imagen}}" alt=""></a>
+            <div class="down-content">
+              <button (click)="onClick(r)" class="tituloCarta"> {{r.nombreRestaurante}}</button>
+              <p>{{r.direccionRestaurante}}</p>
+              <span><strong>{{r.ciudad.nombre}}</strong></span>
+            </div>
+          </div>
+        </div>
+        </div>
+  </div>
+</div>
+
+-->
+
+

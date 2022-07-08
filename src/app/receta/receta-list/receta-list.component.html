@@ -1,0 +1,33 @@
+<div class="page-heading products-heading header-text" id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-content">
+          <h2><strong>RECETAS</strong></h2>
+          <h4>Aprende a cocinarlo</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div *ngIf="selected">
+  <app-receta-detail [recetaDetail] = "selectedReceta"></app-receta-detail>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let r of recetas" class="col mb-2">
+      <div class="card p-2" style="width: 15rem">
+        <img
+          class="card-img-top"
+          src="{{ r.imagenes }}"
+          alt="{{ r.nombre }}"
+          (click)="onClick(r)"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ r.nombre }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

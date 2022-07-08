@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ ingredienteDetail.nombre }}</p>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt>Nombre</dt>
+        <dd>{{ ingredienteDetail.nombre }}</dd>
+        <hr />
+        <dt>Historia</dt>
+        <dd>{{ ingredienteDetail.historia }}</dd>
+        <hr />
+        <dt class="bold">Categoría</dt>
+        <dd class="caption">{{ ingredienteDetail.categoria }}</dd>
+        <hr />
+        <dt class="bold">Marcas representativas</dt>
+        <dd>{{ ingredienteDetail.marcasRepresentativas }}</dd>
+        <dt>Recetas</dt>
+        <dd class="caption" routerLink="/recetas/{{ receta.id }}" *ngFor="let receta of ingredienteDetail.recetas">
+          {{ receta.nombre }}
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>

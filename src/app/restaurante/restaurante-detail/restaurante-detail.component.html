@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <p class="h3 p-3"><strong>{{ restauranteDetail.nombreRestaurante }}</strong></p>
+  <div class="row">
+    <div class="col">
+      <br><br>
+      <dl>
+        <dt>Dirección</dt>
+        <dd>{{ restauranteDetail.direccionRestaurante}}</dd>
+        <hr>
+        <dt>Ciudad</dt>
+        <dd routerLink="/ciudades/{{restauranteDetail.ciudad.id}}">{{ restauranteDetail.ciudad.nombre }}</dd>
+      </dl>
+      <hr />
+    </div>
+    <div class="col">
+      <img class="imagen" src="{{ restauranteDetail.imagen}}" alt="{{ restauranteDetail.nombreRestaurante}}" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt>Platos</dt>
+        <ul>
+          <li *ngFor="let p of restauranteDetail?.platos" routerLink="/platos/{{p.id}}">{{p.nombrePlato}}</li>
+        </ul>
+        <hr>
+        <dt>Culturas Culinarias</dt>
+        <ul>
+          <li *ngFor="let cc of restauranteDetail?.culturasCulinarias" routerLink="/culturasculinarias/{{cc.id}}">
+            {{cc.nombreCultura}}</li>
+        </ul>
+        <hr>
+        <dt>Estrellas Michelin</dt>
+        <ul>
+          <li *ngFor="let em of restauranteDetail?.estrellaMichelin" routerLink="/estrellasMichelin/{{em.id}}">
+            {{em.tipoEstrella}}</li>
+        </ul>
+        <hr>
+      </dl>
+    </div>
+  </div>
+</div>

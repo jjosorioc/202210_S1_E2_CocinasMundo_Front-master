@@ -1,0 +1,21 @@
+<h1>¡Países!</h1>
+<hr *ngIf="selected">
+<div *ngIf="selected">
+  <app-pais-detail [paisDetail]="selectedPais"></app-pais-detail>
+</div>
+<hr>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let p of paises" class="col mb-2">
+      <div class="card p-2" style="width: 15rem; height: 10rem" (click)="onSelected(p)">
+        <div class="card-body">
+          <h5 class="card-title">{{p.nombre}}</h5>
+          <p class="card-text">Latitud: {{p.ubicacion.latitudUbicacion}}</p>
+          <p class="card-text">Longitud: {{p.ubicacion.longitudUbicacion}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

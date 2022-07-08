@@ -1,0 +1,17 @@
+
+<div class="container-fluid" *ngIf="notUndefined()">
+  <p class="h3 p-3">{{ ciudadDetail.nombre }}</p>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt>Pais</dt>
+        <dd routerLink="/paises/{{ciudadDetail.pais.id}}">{{ciudadDetail.pais.nombre}}</dd>
+        <hr />
+        <dt>Ubicacion</dt>
+        <dd>Latitud: {{ciudadDetail.ubicacion.latitudUbicacion}}</dd>
+        <dd>Longitud: {{ciudadDetail.ubicacion.longitudUbicacion}}</dd>
+        <hr />
+      </dl>
+    </div>
+  </div>
+</div>
